@@ -1,0 +1,23 @@
+{
+  "skill_name": "scenario",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "I want to generate a cute pixel art robot using the Scenario API with the flux.1-dev model, 1024x1024 resolution, and download the result to my desktop",
+      "expected_output": "Uses generate.py with --mode txt2img, correct model ID and dimensions, polls the job, then uses download_asset.py to save the image locally",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Show me all the images I generated in the last week from my Scenario account, I want a readable summary not raw JSON",
+      "expected_output": "Uses list_assets.py with --created-after set to 7 days ago, --sort-by createdAt, and --summary flag for human-readable output",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "I have an image at ./photo.png and I want to remove its background using Scenario, then upscale the result 4x, and save both versions",
+      "expected_output": "Runs generate.py twice: first with --mode remove-background --image ./photo.png, waits for completion, then runs --mode upscale with the resulting asset ID and --scaling-factor 4. Downloads both results.",
+      "files": []
+    }
+  ]
+}

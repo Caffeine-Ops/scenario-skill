@@ -1,0 +1,10 @@
+# Generated outputs (user-specific)
+chess-outputs/
+*-workspace/
+
+# OS files
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
